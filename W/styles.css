@@ -1,0 +1,71 @@
+:root {
+  --bg-day-top:#b6e2ff;
+  --bg-day-bottom:#ffffff;
+  --bg-night-top:#0b0c2a;
+  --bg-night-bottom:#1a1a40;
+  --grass:#5ec26a;
+  --mountain:#8fb7d1;
+  --mountain-dark:#6b91aa;
+}
+
+* { box-sizing:border-box; }
+html, body { height:100%; margin:0; font-family: system-ui, sans-serif; overflow:hidden; }
+
+body {
+  color:#fff;
+  background: url('Arbol.png') center center/cover no-repeat fixed;
+  transition: background 600ms ease;
+}
+
+/* Oculta las capas de efectos antiguos */
+.layer,
+.mountains,
+.grass {
+  display: none !important;
+}
+
+.sun,.moon{ position:absolute; width:64px; height:64px; border-radius:50%; box-shadow:0 0 18px currentColor; opacity:.95; }
+.sun { color:#ffd54a; background:currentColor; top:10%; left:10%; animation:sunMove 60s linear infinite; }
+.moon { color:#d9d9ff; background:currentColor; top:15%; left:85%; animation:moonMove 90s linear infinite; display:none; }
+@keyframes sunMove{0%{top:12%;left:10%}50%{top:0;left:50%}100%{top:12%;left:90%}}
+@keyframes moonMove{0%{top:18%;left:85%}50%{top:0;left:45%}100%{top:18%;left:5%}}
+
+.stars {position:absolute; inset:0; display:none;}
+.star {position:absolute; width:2px; height:2px; background:#fff; border-radius:50%; opacity:.7; animation:twinkle 2.2s ease-in-out infinite alternate;}
+.star:nth-child(even){animation-duration:3.1s;}
+@keyframes twinkle{from{opacity:.3} to{opacity:1}}
+
+.night { background: linear-gradient(to top, var(--bg-night-bottom), var(--bg-night-top)) }
+
+.date-banner {
+  position:absolute; top:14px; left:50%; transform:translateX(-50%);
+  font-weight:900; font-size: clamp(28px, 6vw, 56px);
+  color:#fff; -webkit-text-stroke: 2px #000;
+  text-shadow:-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,2px 2px 0 #000,0 0 14px #0006;
+  z-index:10; letter-spacing:.5px;
+}
+
+.time-counter {
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font: 700 16px ui-monospace, monospace;
+  color:#fff; background:#0008; padding:10px 14px; border-radius:12px; z-index:10; border:1px solid #ffffff33;
+}
+
+.heartText {
+  position:absolute; transform:translate(-50%,-50%);
+  font-size: clamp(14px, 3.2vw, 22px); font-weight:800;
+  text-shadow:1px 1px 2px #000,-1px -1px 2px #000;
+  animation: floatUp 2.2s ease-out forwards; pointer-events:none; white-space:nowrap;
+}
+@keyframes floatUp {0%{transform:translate(-50%,-50%) scale(.9);opacity:1}100%{transform:translate(-50%,-140%) scale(1);opacity:0}}
+
+.petal{position:absolute; top:-5vh; font-size:18px; animation:fall 7s linear forwards; pointer-events:none;}
+@keyframes fall{0%{transform:translateY(0) translateX(0) rotate(0)}50%{transform:translateY(50vh) translateX(12vw) rotate(180deg)}100%{transform:translateY(110vh) translateX(25vw) rotate(360deg);opacity:0}}
+
+.tree{position:absolute; right:4vw; bottom:12vh; width:260px; height:320px; z-index:5; transform-origin:bottom right; animation:sway 4.5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.6deg)}}
+.tree svg{width:100%; height:100%; image-rendering: pixelated}
+
+.start{position:absolute; inset:0; background:#000b; display:flex; align-items:center; justify-content:center; z-index:20;}
+.start button{font:700 18px system-ui,sans-serif;padding:14px 18px;border-radius:14px;border:none;color:#1a1a40;background:#ffecf6;cursor:pointer;box-shadow:0 12px 30px #0006}
+.start button:active{transform: translateY(1px);}

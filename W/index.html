@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aniversario 🌸</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cielo, sol, luna y estrellas -->
+  <div class="layer">
+    <div class="sun" id="sun"></div>
+    <div class="moon" id="moon"></div>
+    <div class="stars" id="stars"></div>
+  </div>
+
+  <div class="mountains layer"></div>
+  <div class="grass layer"></div>
+
+  <!-- Árbol de cerezo -->
+  <div class="tree" aria-hidden="true">
+    <svg viewBox="0 0 130 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tronco -->
+      <rect x="58" y="80" width="14" height="60" fill="#6b3e2e"/>
+      <!-- Ramas y flores pixeladas -->
+      <rect x="46" y="76" width="40" height="8" fill="#6b3e2e"/>
+      <g>
+        <rect x="18" y="44" width="22" height="18" fill="#ff9bd4"/>
+        <rect x="34" y="34" width="26" height="20" fill="#ff83c6"/>
+        <rect x="56" y="46" width="28" height="18" fill="#ff9bd4"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Fecha destacada -->
+  <div class="date-banner">Desde <strong>05/06/2024</strong> 💖</div>
+  <div class="time-counter" id="counter">Tiempo juntos: <span id="time">Cargando...</span></div>
+
+  <!-- Overlay de inicio de audio -->
+  <div class="start" id="start">
+    <button id="startBtn">Tocar para empezar ✨</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
