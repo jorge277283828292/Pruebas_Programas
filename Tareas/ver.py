@@ -6,14 +6,19 @@ def ver_tareas():
         if not Tareas_eliminadas:
             print("No hay tareas eliminadas")
         else:
-            print(f"Tareas completadas: {Tareas_eliminadas}")
+            for t_e in Tareas_eliminadas:
+                print(f" Tareas Elimiinadas: {t_e}") 
     elif opcion == "T":        
         if not Tareas:
             print("No hay tareas")
         else:
-            print(f"Tareas: {Tareas}")
+            for t_t in Tareas: 
+                print(f"Tareas: {t_t}")
     elif opcion == "C":
         if not Tareas_completadas:
             print("No hay tareas incompletas")
         else:
-            print(f"Tareas incompletas: {Tareas_completadas}")
+            for t_c in Tareas_completadas:
+                print(f"Tareas Completadas: {t_c}")
+    else:
+        print("Opcion no valida")

@@ -8,6 +8,7 @@ def eliminar_tareas():
         eliminar = input("Cual tarea deseas eliminar? ")
         if eliminar in Tareas:
             Tareas.remove(eliminar)
+            Tareas_eliminadas.append(eliminar)
             print("Tarea eliminada")
         else:
             print("Tarea no encontrada")
