@@ -1,5 +1,6 @@
 
 def opcioness():
+    print("---------------------------------")
     print("Opciones: ")
     print("1. Agregar tarea")
     print("2. Eliminar tarea")
@@ -7,3 +8,5 @@ def opcioness():
     print("4. Marcar tarea como completada")
     print("5. Restaurar tarea eliminada")
     print("6. Salir")
+    print("---------------------------------")
+X
